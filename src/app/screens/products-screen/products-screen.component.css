@@ -1,0 +1,19 @@
+.search-field
+{
+    background: transparent;
+    border: none;
+    outline: 0;
+    border-bottom: 1px solid white;
+    color: white;
+    width: 100%;
+}
+
+.items-perpage
+{
+    background: transparent;
+    border: none;
+    outline: 0;
+    border-bottom: 1px solid white;
+    color: white;
+    width: 50%;
+}

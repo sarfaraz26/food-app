@@ -1,0 +1,59 @@
+<div class="container my-4">
+    <div class="text-center">
+        <input type="text" name="search-food" id="search-food" class="search-field" placeholder="Search foods...">
+    </div>
+    <div class="row my-5">
+        <div class="col-md-2">
+            <h4>CATEGORIES</h4>
+            <div class="form-check" *ngFor="let category of categories">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  {{category.name}}
+                </label>
+            </div>
+            <h4 class="mt-5">TYPE</h4>
+            <div class="form-check" *ngFor="let type of types">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  {{type.name}}
+                </label>
+            </div>
+            <div class="mt-5">
+                <h4 class="mt-5">ITEMS PER PAGE</h4>
+                <input type="number" name="items-perpage" id="items-perpage" class="items-perpage">
+            </div>
+            <div class="mt-5">
+                <h4 class="mt-5">PAGINATION</h4>
+                <nav aria-label="...">
+                    <ul class="pagination pagination-sm">
+                      <li class="page-item"><a class="page-link bg-dark text-light" href="#">Prev</a></li>
+                      <li class="page-item"><a class="page-link bg-dark text-light" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link bg-dark text-light" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col" *ngFor="let food of foods">
+                    <div class="card" style="height: 29rem;">
+                        <img [src]="food.img" class="card-img-top" alt="{{food.name}}" height="200">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                {{food.name}}
+                            </h5>
+                            <p class="card-text text-secondary">
+                                {{food.description}}
+                            </p>
+                            <p [class]="food.typeId === 1 ? 'badge bg-success' : 'badge bg-danger'">
+                                {{food.typeId == 1 ? 'Veg' : 'Non-Veg'}}
+                            </p>
+                            <h5>${{food.price}}</h5>
+                            <button type="button" class="btn btn-dark">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
